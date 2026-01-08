@@ -5,10 +5,10 @@ import "../App.css";
 const ClinicalReport = ({ data }) => {
   return (
     <div className="section-container" style={{ marginTop: '40px', paddingBottom: '100px' }}>
-      <div style={{ 
-        background: '#fff', 
-        padding: '50px', 
-        borderRadius: '8px', 
+      <div style={{
+        background: '#fff',
+        padding: '50px',
+        borderRadius: '8px',
         boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
         border: '1px solid #e2e8f0',
         maxWidth: '900px',
@@ -30,21 +30,24 @@ const ClinicalReport = ({ data }) => {
         {/* Report Content */}
         <div className="report-body" style={{ color: '#1e293b' }}>
           <h3 style={{ color: '#2563eb', fontSize: '1.1rem', marginBottom: '10px' }}>Subjective</h3>
-          <p style={{ marginBottom: '20px' }}>
-            Patient presents with persistent headaches over the last 72 hours. Reports light sensitivity and nausea, particularly in the morning. Pain is described as sharp.
+          <p style={{ marginBottom: '20px', whiteSpace: 'pre-wrap' }}>
+            {data?.subjective || "No subjective data available."}
+          </p>
+
+          <h3 style={{ color: '#2563eb', fontSize: '1.1rem', marginBottom: '10px' }}>Objective</h3>
+          <p style={{ marginBottom: '20px', whiteSpace: 'pre-wrap' }}>
+            {data?.objective || "No objective data available."}
           </p>
 
           <h3 style={{ color: '#2563eb', fontSize: '1.1rem', marginBottom: '10px' }}>Assessment</h3>
-          <p style={{ marginBottom: '20px' }}>
-            Symptoms are consistent with acute migraine or tension-type headache. Light sensitivity suggests migraine involvement.
+          <p style={{ marginBottom: '20px', whiteSpace: 'pre-wrap' }}>
+            {data?.assessment || "No assessment available."}
           </p>
 
           <h3 style={{ color: '#2563eb', fontSize: '1.1rem', marginBottom: '10px' }}>Plan</h3>
-          <ul style={{ paddingLeft: '20px', marginBottom: '30px' }}>
-            <li>Increase fluid intake.</li>
-            <li>Maintain a headache diary for the next 14 days.</li>
-            <li>Follow-up if symptoms worsen or neurological changes occur.</li>
-          </ul>
+          <p style={{ marginBottom: '20px', whiteSpace: 'pre-wrap' }}>
+            {data?.plan || "No plan available."}
+          </p>
         </div>
 
         {/* Action Buttons for the Report */}
