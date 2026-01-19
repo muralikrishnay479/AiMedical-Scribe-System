@@ -67,7 +67,7 @@ source venv/bin/activate  # On Windows: venv\\Scripts\\activate
 pip install -r requirements.txt
 
 # Run the server
-uvicorn main:app --reload
+py main.py
 ```
 
 ### Frontend Setup
@@ -80,7 +80,7 @@ cd frontend
 npm install
 
 # Start development server
-npm start
+npm run dev
 ```
 
 ## Usage
